@@ -27,7 +27,7 @@ average_rating = data['Рейтинг'].mean().round(2)
 print(f"\nСредний рейтинг фильмов: {average_rating}")
 
 # находим фильмы, выпущенные после 2005 года
-movies_after_2000 = data[data['Год'] > 2005]
-print(f"\nФильмы, выпущенные после 2005 года: {movies_after_2000}")
+movies_after_2005 = data[data['Год'] > 2005]
+print(f"\nФильмы, выпущенные после 2005 года: {movies_after_2005}")
 
 
