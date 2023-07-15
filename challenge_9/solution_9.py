@@ -76,7 +76,7 @@ for period in periods:
 most_films_period = max(films_per_period, key=films_per_period.get)
 films_count = films_per_period[most_films_period]
 
-print("\nПериоды выхода фильмов:")
+print("\nПериоды, в которые выходили лучшие фильмы:")
 for period, count in films_per_period.items():
     print(f"{period}: {count} фильмов")
 print("\nВ периоде", most_films_period, "было снято наибольшее количество фильмов:", films_count)
