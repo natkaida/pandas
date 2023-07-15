@@ -36,7 +36,7 @@ print("Режиссеры, снявшие более одного фильма �
 for director, count in multiple_director_films.items():
     films = df[df["Режиссер"] == director]
     films_info = films[["Название", "Год"]]
-    print(f"Режиссер: {director}, Количество фильмов: {count}")
+    print(f"\nРежиссер: {director}, количество фильмов: {count}")
     print(films_info)
 
 # выбираем 5 самых новых фильмов
@@ -51,7 +51,7 @@ print(newest_films[["Название", "Год", "Режиссер"]].to_string
 
 # анализируем жанры
 most_common_genre = df["Жанр"].value_counts().idxmax()
-print("Самый популярный жанр среди высокорейтинговых фильмов:", most_common_genre)
+print("\nСамый популярный жанр среди высокорейтинговых фильмов:", most_common_genre)
 
 # находим самый старый фильм
 oldest_film = df.sort_values("Год").iloc[0]
@@ -61,7 +61,7 @@ oldest_film_title = oldest_film["Название"]
 # создаем временные периоды, начиная с самого старого фильма
 start_year = oldest_year
 end_year = df["Год"].max()
-interval = 5
+interval = 7
 periods = range(start_year, end_year, interval)
 
 # подсчитываем количество фильмов в каждом периоде
@@ -88,4 +88,4 @@ sheet_name = "топ-250"
 with pd.ExcelWriter(filename) as writer:
     df.to_excel(writer, sheet_name=sheet_name, index=False)
 
-print(f"DataFrame сохранен в файл {filename} на листе {sheet_name}.")
+print(f"\nDataFrame сохранен в файл {filename} на листе {sheet_name}.")
